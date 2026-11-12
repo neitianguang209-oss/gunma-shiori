@@ -178,6 +178,17 @@ li.stay .time{background:var(--sakura)}
   box-shadow:0 3px 0 rgba(31,78,107,.4);
 }
 .mapbtn:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(31,78,107,.4)}
+.park{display:flex;gap:8px;margin:9px 0 2px;padding:9px 11px;border-radius:11px;
+  background:rgba(31,78,107,.06);border:1.5px dashed rgba(31,78,107,.38);font-size:.84rem;line-height:1.6}
+.park .pk{flex:none;width:22px;height:22px;border-radius:6px;background:var(--ai);color:#fff;
+  display:grid;place-items:center;font-weight:900;font-size:.8rem;margin-top:1px}
+.park b{color:var(--ai)}
+.pksub{display:block;font-size:.8rem;color:var(--ink-soft);margin-top:2px}
+.pksub b{color:var(--hi)}
+.pkbtns{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+.parkbtn{display:inline-flex;white-space:nowrap;align-items:center;min-height:34px;text-decoration:none;font-size:.8rem;font-weight:700;
+  padding:5px 12px;border-radius:999px;background:var(--paper);color:var(--ai);border:2px solid var(--ai)}
+.parkbtn:active{transform:translateY(1px)}
 .drive{
   margin:2px 0 0;font-size:.78rem;color:var(--ink-soft);
   padding-left:2px;font-style:italic;
@@ -258,6 +269,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--sakura);outline-off
         <h3 class="ttl"><span class="ico">🍌</span>道の駅 まえばし赤城</h3>
         <p class="note">直売所・鮮魚センター・まえばしバナナ。フードコートは18店舗。<b>9:00〜22:00</b>（お店で違う）</p>
         <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E9%81%93%E3%81%AE%E9%A7%85%E3%81%BE%E3%81%88%E3%81%B0%E3%81%97%E8%B5%A4%E5%9F%8E">📍 地図をひらく</a>
+        <div class="park"><span class="pk">🅿</span><div>道の駅の駐車場 <b>無料</b></div></div>
         <p class="drive">▸ 伊香保まで 約30分</p>
       </li>
       <li class="pm">
@@ -266,12 +278,13 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--sakura);outline-off
         <h3 class="ttl"><span class="ico">♨️</span>伊香保温泉 石段街</h3>
         <p class="note">365段の石段を食べ歩きでお昼ごはん。湯の花まんじゅう・玉こんにゃくなど</p>
         <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E4%BC%8A%E9%A6%99%E4%BF%9D%E6%B8%A9%E6%B3%89%20%E7%9F%B3%E6%AE%B5%E8%A1%97">📍 地図をひらく</a>
+        <div class="park"><span class="pk">🅿</span><div><b>市営 河鹿橋駐車場</b>（無料・18台・2〜3時間まで）<span class="pksub">石段街の上の端。上から下りながら食べ歩き → 上り坂で戻る。満車なら近くの市営 物聞駐車場（2時間300円・62台）</span><span class="pkbtns"><a class="parkbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E6%B2%B3%E9%B9%BF%E6%A9%8B%E9%A7%90%E8%BB%8A%E5%A0%B4%20%E4%BC%8A%E9%A6%99%E4%BF%9D">🅿 河鹿橋駐車場</a><a class="parkbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E5%B8%82%E5%96%B6%E7%89%A9%E8%81%9E%E9%A7%90%E8%BB%8A%E5%A0%B4%20%E4%BC%8A%E9%A6%99%E4%BF%9D">🅿 物聞駐車場</a></span></div></div>
         <p class="drive">▸ 14:30発 → 宿まで 約1時間（渋川伊香保IC→水上IC）</p>
       </li>
       <li class="stay">
         <span class="dot">🛏</span>
         <span class="time">15:30</span>
-        <h3 class="ttl"><span class="ico">🏨</span>大江戸温泉物語Premium 松乃井 チェックイン</h3>
+        <h3 class="ttl"><span class="ico">🏨</span>大江戸温泉物語Premium <span class="nw">松乃井 チェックイン</span></h3>
         <p class="note">チェックインは15:00から。3つの露天風呂を館内で湯めぐり。夜は<b>夕食バイキング</b></p>
         <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E5%A4%A7%E6%B1%9F%E6%88%B8%E6%B8%A9%E6%B3%89%E7%89%A9%E8%AA%9EPremium%20%E6%9D%BE%E4%B9%83%E4%BA%95%20%E3%81%BF%E3%81%AA%E3%81%8B%E3%81%BF%E7%94%BA">📍 地図をひらく</a>
       </li>
@@ -300,6 +313,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--sakura);outline-off
         <h3 class="ttl"><span class="ico">⛰</span>谷川岳ヨッホ（ロープウェイ）</h3>
         <p class="note">天神平へ空中散歩。<b>営業は11/15までの予定</b>。山の上は寒いので上着を。駐車場は有料</p>
         <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E8%B0%B7%E5%B7%9D%E5%B2%B3%E3%83%A8%E3%83%83%E3%83%9B">📍 地図をひらく</a>
+        <div class="park"><span class="pk">🅿</span><div><b>谷川岳ベースプラザ</b>の立体駐車場（1日500円・屋上の6階は800円）<span class="pksub">乗り場の建物にあり、近くに無料の駐車場はない</span><span class="pkbtns"><a class="parkbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E8%B0%B7%E5%B7%9D%E5%B2%B3%E3%83%99%E3%83%BC%E3%82%B9%E3%83%97%E3%83%A9%E3%82%B6%20%E9%A7%90%E8%BB%8A%E5%A0%B4">🅿 ベースプラザ</a></span></div></div>
         <p class="drive">▸ 11:15下山 → 草津まで 約1時間40分</p>
       </li>
       <li class="pm">
@@ -308,6 +322,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--sakura);outline-off
         <h3 class="ttl"><span class="ico">🍢</span>草津温泉 湯畑</h3>
         <p class="note">食べ歩きでお昼ごはん → 西の河原公園 → 日帰り湯（大滝乃湯など）。<b>湯釜は冬の閉鎖中で行けない</b></p>
         <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E8%8D%89%E6%B4%A5%E6%B8%A9%E6%B3%89%20%E6%B9%AF%E7%95%91">📍 地図をひらく</a>
+        <div class="park"><span class="pk">🅿</span><div><b>湯畑観光駐車場</b>（2時間500円、あとは30分100円・180台）<span class="pksub">湯畑のすぐそば。日帰り湯の前に車を<b>大滝乃湯（無料・約100台）</b>へ移せば、そのまま16:00に出発できる。無料の天狗山第1駐車場は遠くて上り坂なのでパス</span><span class="pkbtns"><a class="parkbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E6%B9%AF%E7%95%91%E8%A6%B3%E5%85%89%E9%A7%90%E8%BB%8A%E5%A0%B4%20%E8%8D%89%E6%B4%A5">🅿 湯畑観光駐車場</a><a class="parkbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E5%A4%A7%E6%BB%9D%E4%B9%83%E6%B9%AF%20%E8%8D%89%E6%B4%A5">🅿 大滝乃湯の駐車場</a></span></div></div>
       </li>
       <li class="eve">
         <span class="dot">🚗</span>
@@ -343,6 +358,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--sakura);outline-off
         <h3 class="ttl"><span class="ico">🥢</span>水沢うどん（水香苑）</h3>
         <p class="note">早めのお昼ごはん</p>
         <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E6%B0%B4%E6%B2%A2%E3%81%86%E3%81%A9%E3%82%93%20%E6%B0%B4%E9%A6%99%E8%8B%91%20%E6%9C%AC%E5%BA%97">📍 地図をひらく</a>
+        <div class="park"><span class="pk">🅿</span><div>お店の駐車場 <b>無料</b></div></div>
         <p class="drive">▸ JAMCOVERまで 約30分</p>
       </li>
       <li class="pm">
@@ -351,6 +367,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--sakura);outline-off
         <h3 class="ttl"><span class="ico">🛍</span>JAMCOVER VILLAGE</h3>
         <p class="note">雑貨・服をゆっくり。中の食堂は<b>現金のみ</b></p>
         <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=JAMCOVER%20VILLAGE%20%E9%AB%98%E5%B4%8E%E5%B8%82%E4%B8%8B%E5%AE%A4%E7%94%B0%E7%94%BA1686">📍 地図をひらく</a>
+        <div class="park"><span class="pk">🅿</span><div>施設の駐車場 <b>無料</b></div></div>
         <p class="drive">▸ 13:15発 → 富岡製糸場まで 約45分</p>
       </li>
       <li class="pm">
@@ -359,6 +376,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--sakura);outline-off
         <h3 class="ttl"><span class="ico">🧵</span>富岡製糸場</h3>
         <p class="note">世界遺産。建物の中で見学できるので雨でも大丈夫。<b>最終入場16:30</b></p>
         <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E5%AF%8C%E5%B2%A1%E8%A3%BD%E7%B3%B8%E5%A0%B4">📍 地図をひらく</a>
+        <div class="park"><span class="pk">🅿</span><div><b>市営 宮本町駐車場</b>（最初の30分無料、あとは30分100円・78台）<span class="pksub">製糸場まで歩いて5〜10分、2時間で約300円。無料の富岡駅東駐車場は歩いて15〜20分なので、雨ならこちら</span><span class="pkbtns"><a class="parkbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E5%AF%8C%E5%B2%A1%E5%B8%82%E5%96%B6%E5%AE%AE%E6%9C%AC%E7%94%BA%E9%A7%90%E8%BB%8A%E5%A0%B4">🅿 宮本町駐車場</a><a class="parkbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E5%AF%8C%E5%B2%A1%E9%A7%85%E6%9D%B1%E9%A7%90%E8%BB%8A%E5%A0%B4">🅿 富岡駅東（無料）</a></span></div></div>
         <p class="drive">▸ こんにゃくパークまで 約15分</p>
       </li>
       <li class="pm">
@@ -367,6 +385,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--sakura);outline-off
         <h3 class="ttl"><span class="ico">🎡</span>こんにゃくパーク</h3>
         <p class="note">工場見学と無料の試食バイキング。<b>疲れていたらここは切る</b></p>
         <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E3%81%93%E3%82%93%E3%81%AB%E3%82%83%E3%81%8F%E3%83%91%E3%83%BC%E3%82%AF%20%E7%94%98%E6%A5%BD%E7%94%BA">📍 地図をひらく</a>
+        <div class="park"><span class="pk">🅿</span><div>施設の駐車場 <b>無料</b></div></div>
         <p class="drive">▸ 16:00発 → 富岡IC → 上信越道 → 関越道 → 外環</p>
       </li>
       <li class="eve">
@@ -385,6 +404,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--sakura);outline-off
       <li><b>上着</b> — 谷川岳の上と朝晩は冷える（最低気温2〜3℃）</li>
       <li><b>現金</b> — JAMCOVERの食堂はカード・電子マネーが使えない</li>
       <li><b>フェイスタオル</b> — 草津の日帰り湯用</li>
+      <li><b>駐車場</b> — 有料は 伊香保（無料の河鹿橋が空いていれば0円）・谷川岳 500円・草津 500〜700円・富岡 約300円。料金はネットの情報なので、現地の看板を優先</li>
       <li><b>行けない場所</b> — 湯釜（冬の閉鎖中）・一ノ倉沢（通行止め）</li>
       <li><b>宿の名前</b> — カレンダーに名前が無かったので「水上のPremium」から判断。予約メールで確認しておく</li>
     </ul>
@@ -406,13 +426,16 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--sakura);outline-off
 🚗 9:30 南行徳 出発（外環→関越）
 🛍 11:30 道の駅まえばし赤城
 🍡 12:30 伊香保 石段街（食べ歩きで昼）
+　🅿 河鹿橋駐車場（無料）→満車なら物聞駐車場
 🚗 14:30 伊香保 出発
 🏨 15:30 宿 → 温泉 → 夕食バイキング
 
 【2日目 11/14 土 曇り時々晴れ】
 🍳 朝食 → 9:00 出発
 🚡 9:20 谷川岳ヨッホ（ロープウェイ）
+　🅿 ベースプラザ駐車場（500円）
 ♨️ 13:00 草津 湯畑（食べ歩き・西の河原・日帰り湯）
+　🅿 湯畑観光駐車場 → 日帰り湯は大滝乃湯の無料駐車場へ
 ⚠️ 16:00 草津 出発（押したら日帰り湯を切る）
 🏨 17:40 宿 → 夕食バイキング
 
@@ -421,6 +444,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--sakura);outline-off
 🍜 11:00 水沢うどん（水香苑）
 🧸 12:00 JAMCOVER VILLAGE
 🏭 13:45 富岡製糸場 ⚠️最終入場16:30
+　🅿 市営 宮本町駐車場（30分無料・以降30分100円）
 🍮 15:15 こんにゃくパーク（疲れたら切る）
 🚗 16:00 帰路
 🏠 18:30〜19:00 南行徳 着</pre>
