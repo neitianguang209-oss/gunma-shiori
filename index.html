@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>群馬 2泊3日｜旅のしおり</title>
+<meta name="theme-color" content="#e0d4bc">
+<meta name="description" content="11/13〜15 群馬 2泊3日（伊香保・谷川岳・草津・富岡）">
+<meta property="og:title" content="群馬 2泊3日｜旅のしおり">
+<meta property="og:description" content="伊香保・谷川岳・草津・富岡製糸場 / 11.13〜11.15">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="群馬しおり">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* --- palette: 飛騨の紙と水と火 --- */
+  --paper:      #fdf4dd;   /* クリーム色の厚紙 */
+  --paper-edge: #f0e2c2;
+  --desk:       #ded1b6;   /* 明るい机 */
+  --ink:        #33291f;   /* 焦茶のペン */
+  --ink-soft:   #6d5f4d;
+  --ai:         #1f4e6b;   /* 藍 / 郡上の水 */
+  --emerald:    #1f9c81;   /* 付知峡のエメラルド */
+  --hi:         #ef6a2e;   /* 下呂の湯・提灯の朱 */
+  --sakura:     #e8637f;   /* 飛騨牛のさくら */
+  --yamabuki:   #f2b024;   /* 山吹 */
+
+  --r: 14px;
+  --shadow: 0 10px 24px -12px rgba(51,41,31,.45), 0 2px 4px rgba(51,41,31,.14);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:"Zen Maru Gothic", system-ui, -apple-system, "Hiragino Maru Gothic ProN", sans-serif;
+  color:var(--ink);
+  background-color:var(--desk);
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(255,255,255,.5), transparent 42%),
+    radial-gradient(circle at 88% 72%, rgba(160,140,105,.28), transparent 46%);
+  line-height:1.75;
+  padding:calc(14px + env(safe-area-inset-top)) calc(12px + env(safe-area-inset-right)) calc(48px + env(safe-area-inset-bottom)) calc(12px + env(safe-area-inset-left));
+  overflow-x:hidden;
+}
+
+.wrap{max-width:520px;margin:0 auto}
+
+/* ---------- 紙 ---------- */
+.sheet{
+  position:relative;
+  background:var(--paper);
+  border-radius:var(--r);
+  box-shadow:var(--shadow);
+  padding:26px 18px 24px;
+  margin:0 0 26px;
+  border:1px solid var(--paper-edge);
+  overflow:hidden;
+}
+/* 紙の繊維感＋水彩ドット */
+.sheet::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    radial-gradient(circle at 84% 14%, rgba(31,156,129,.11) 0 26px, transparent 27px),
+    radial-gradient(circle at 10% 62%, rgba(242,176,36,.13) 0 34px, transparent 35px),
+    radial-gradient(circle at 92% 88%, rgba(232,99,127,.10) 0 22px, transparent 23px),
+    radial-gradient(circle at 26% 96%, rgba(31,78,107,.08) 0 30px, transparent 31px);
+}
+.sheet > *{position:relative;z-index:1}
+
+/* ---------- マスキングテープ ---------- */
+.tape{
+  position:absolute;z-index:2;width:96px;height:26px;
+  background:repeating-linear-gradient(115deg,
+     rgba(255,255,255,.5) 0 6px, rgba(255,255,255,.18) 6px 12px);
+  box-shadow:0 1px 3px rgba(51,41,31,.18);
+  opacity:.92;
+}
+.tape.tl{top:-11px;left:16px;transform:rotate(-6deg);background-color:var(--yamabuki)}
+.tape.tr{top:-11px;right:14px;transform:rotate(5deg);background-color:var(--emerald)}
+.tape.br{bottom:-11px;right:26px;transform:rotate(-4deg);background-color:var(--sakura)}
+
+/* ---------- 表紙 ---------- */
+.cover{text-align:center;padding:30px 18px 28px}
+.cover .eyebrow{
+  font-family:"Yusei Magic",cursive;color:var(--hi);
+  letter-spacing:.22em;font-size:.8rem;margin:0 0 6px
+}
+.cover h1{
+  font-family:"Yusei Magic",cursive;
+  font-size:clamp(2rem,10vw,2.9rem);
+  margin:0;line-height:1.2;color:var(--ai);
+}
+.cover h1 em{font-style:normal;color:var(--hi)}
+.cover .sub{margin:12px 0 0;font-size:.95rem;color:var(--ink-soft)}
+.cover .stamp{
+  display:inline-block;margin-top:16px;padding:7px 16px;
+  border:2.5px dashed var(--sakura);border-radius:999px;
+  font-family:"Yusei Magic",cursive;color:var(--sakura);
+  font-size:.9rem;transform:rotate(-2.5deg);
+}
+
+/* ---------- 日タブ ---------- */
+nav.days{
+  position:sticky;top:8px;z-index:20;
+  display:flex;gap:8px;margin:0 0 18px;
+}
+nav.days a{
+  flex:1;text-align:center;text-decoration:none;
+  font-family:"Yusei Magic",cursive;font-size:.98rem;
+  padding:11px 6px;border-radius:11px;
+  background:var(--paper);color:var(--ai);
+  border:2px solid var(--ai);
+  box-shadow:0 4px 0 rgba(31,78,107,.35);
+}
+nav.days a.b{color:var(--hi);border-color:var(--hi);box-shadow:0 4px 0 rgba(239,106,46,.35)}
+nav.days a:active{transform:translateY(2px);box-shadow:0 2px 0 rgba(31,78,107,.35)}
+
+/* ---------- 見出し ---------- */
+.dayhead{display:flex;align-items:baseline;gap:10px;margin:0 0 4px}
+.dayhead .num{
+  font-family:"Yusei Magic",cursive;font-size:2.15rem;line-height:1;color:var(--hi);
+}
+.dayhead .lbl{font-family:"Yusei Magic",cursive;font-size:1.15rem;color:var(--ai)}
+.dayroute{
+  font-size:.86rem;color:var(--ink-soft);margin:0 0 20px;
+  padding-bottom:14px;
+  border-bottom:3px dotted rgba(109,95,77,.42);
+}
+
+/* ---------- タイムライン ---------- */
+ol.tl{list-style:none;margin:0;padding:0 0 0 4px;position:relative}
+ol.tl::before{
+  content:"";position:absolute;left:15px;top:14px;bottom:14px;width:3px;
+  background:repeating-linear-gradient(to bottom,
+    rgba(109,95,77,.55) 0 5px, transparent 5px 12px);
+}
+ol.tl li{position:relative;padding:0 0 20px 40px}
+.dot{
+  position:absolute;left:6px;top:4px;width:22px;height:22px;border-radius:50%;
+  background:var(--paper);border:3px solid var(--ai);
+  display:grid;place-items:center;font-size:.62rem;
+}
+li.am   .dot{border-color:var(--yamabuki)}
+li.pm   .dot{border-color:var(--emerald)}
+li.eve  .dot{border-color:var(--hi)}
+li.stay .dot{border-color:var(--sakura);background:var(--sakura)}
+
+.time{
+  display:inline-block;font-weight:900;font-size:.86rem;letter-spacing:.02em;
+  padding:2px 10px;border-radius:8px;color:#fff;background:var(--ai);
+  font-variant-numeric:tabular-nums;
+}
+li.am   .time{background:var(--yamabuki);color:#4a3405}
+li.pm   .time{background:var(--emerald)}
+li.eve  .time{background:var(--hi)}
+li.stay .time{background:var(--sakura)}
+
+.ttl{font-family:"Yusei Magic",cursive;font-size:1.14rem;margin:6px 0 2px;color:var(--ink)}
+.ttl .ico{margin-right:4px}
+.note{margin:0;font-size:.87rem;color:var(--ink-soft)}
+.note b{color:var(--hi)}
+
+.mapbtn{
+  display:inline-flex;align-items:center;gap:5px;margin-top:8px;
+  text-decoration:none;font-size:.82rem;font-weight:700;
+  padding:6px 13px;border-radius:999px;
+  background:var(--ai);color:#fff;
+  box-shadow:0 3px 0 rgba(31,78,107,.4);
+}
+.mapbtn:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(31,78,107,.4)}
+.drive{
+  margin:2px 0 0;font-size:.78rem;color:var(--ink-soft);
+  padding-left:2px;font-style:italic;
+}
+
+/* ---------- 自由時間 ---------- */
+.free{
+  margin:6px 0 22px 44px;padding:18px 16px;
+  border:2.5px dashed rgba(232,99,127,.55);border-radius:var(--r);
+  background:rgba(255,255,255,.42);
+}
+.free h4{font-family:"Yusei Magic",cursive;margin:0 0 4px;color:var(--sakura);font-size:1.05rem}
+.free p{margin:0;font-size:.85rem;color:var(--ink-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+.chip{
+  font-size:.8rem;font-weight:700;padding:5px 11px;border-radius:999px;
+  background:var(--paper);border:2px solid var(--yamabuki);color:var(--ink);
+}
+
+/* ---------- メモ ---------- */
+.memo h3{
+  font-family:"Yusei Magic",cursive;font-size:1.25rem;margin:0 0 12px;color:var(--ai);
+}
+.memo ul{margin:0;padding-left:1.15em;font-size:.88rem}
+.memo li{margin-bottom:7px}
+.memo li::marker{color:var(--hi)}
+
+/* ---------- LINE用 ---------- */
+pre#linetext{
+  white-space:pre-wrap;word-break:break-word;
+  font-family:"Zen Maru Gothic",monospace;font-size:.76rem;line-height:1.6;
+  background:rgba(255,255,255,.6);border:1px solid var(--paper-edge);
+  border-radius:10px;padding:12px;max-height:190px;overflow:auto;margin:0 0 12px;
+}
+button#copy{
+  width:100%;font-family:"Yusei Magic",cursive;font-size:1.02rem;
+  padding:13px;border-radius:12px;border:none;cursor:pointer;
+  background:var(--emerald);color:#fff;box-shadow:0 4px 0 #157161;
+}
+button#copy:active{transform:translateY(3px);box-shadow:0 1px 0 #157161}
+
+footer{text-align:center;font-size:.8rem;color:var(--ink-soft);padding:4px 0 0}
+footer .heart{color:var(--sakura)}
+
+a:focus-visible,button:focus-visible{outline:3px solid var(--sakura);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="sheet cover">
+    <span class="tape tl"></span><span class="tape tr"></span>
+    <p class="eyebrow">GUNMA 3 DAYS</p>
+    <h1>群馬、<em>湯めぐりドライブ</em></h1>
+    <p class="sub">2026.11.13 – 11.15<br>南行徳 発 ⇄ 大江戸温泉物語Premium 松乃井 泊</p>
+    <div class="stamp">🚗 走行 約 630 km</div>
+  </section>
+  <nav class="days">
+    <a href="#d1">1日目 ▸ 伊香保</a>
+    <a class="b" href="#d2">2日目 ▸ 草津</a>
+    <a href="#d3">3日目 ▸ 富岡</a>
+  </nav>
+  <section class="sheet" id="d1">
+    <span class="tape tl"></span>
+    <div class="dayhead"><span class="num">1</span><span class="lbl">日目・11/13（金）☀️</span></div>
+    <p class="dayroute">南行徳 → 道の駅まえばし赤城 → 伊香保 → 水上（宿）</p>
+    <ol class="tl">
+      <li class="am">
+        <span class="dot">🚗</span>
+        <span class="time">9:30</span>
+        <h3 class="ttl"><span class="ico">🏠</span>南行徳 出発</h3>
+        <p class="note">外環 → 関越道。駒寄スマートIC か 渋川伊香保IC で降りる</p>
+        <p class="drive">▸ 道の駅まえばし赤城まで 約2時間</p>
+      </li>
+      <li class="am">
+        <span class="dot">🛍</span>
+        <span class="time">11:30</span>
+        <h3 class="ttl"><span class="ico">🍌</span>道の駅 まえばし赤城</h3>
+        <p class="note">直売所・鮮魚センター・まえばしバナナ。フードコートは18店舗。<b>9:00〜22:00</b>（お店で違う）</p>
+        <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E9%81%93%E3%81%AE%E9%A7%85%E3%81%BE%E3%81%88%E3%81%B0%E3%81%97%E8%B5%A4%E5%9F%8E">📍 地図をひらく</a>
+        <p class="drive">▸ 伊香保まで 約30分</p>
+      </li>
+      <li class="pm">
+        <span class="dot">🍡</span>
+        <span class="time">12:30</span>
+        <h3 class="ttl"><span class="ico">♨️</span>伊香保温泉 石段街</h3>
+        <p class="note">365段の石段を食べ歩きでお昼ごはん。湯の花まんじゅう・玉こんにゃくなど</p>
+        <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E4%BC%8A%E9%A6%99%E4%BF%9D%E6%B8%A9%E6%B3%89%20%E7%9F%B3%E6%AE%B5%E8%A1%97">📍 地図をひらく</a>
+        <p class="drive">▸ 14:30発 → 宿まで 約1時間（渋川伊香保IC→水上IC）</p>
+      </li>
+      <li class="stay">
+        <span class="dot">🛏</span>
+        <span class="time">15:30</span>
+        <h3 class="ttl"><span class="ico">🏨</span>大江戸温泉物語Premium 松乃井 チェックイン</h3>
+        <p class="note">チェックインは15:00から。3つの露天風呂を館内で湯めぐり。夜は<b>夕食バイキング</b></p>
+        <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E5%A4%A7%E6%B1%9F%E6%88%B8%E6%B8%A9%E6%B3%89%E7%89%A9%E8%AA%9EPremium%20%E6%9D%BE%E4%B9%83%E4%BA%95%20%E3%81%BF%E3%81%AA%E3%81%8B%E3%81%BF%E7%94%BA">📍 地図をひらく</a>
+      </li>
+    </ol>
+    <div class="free">
+      <h4>🌙 15:30〜 宿でのんびり / Free Time</h4>
+      <p>夕食まで温泉と庭園でゆっくり。明日は9時出発なので早めに休もう</p>
+      <div class="chips"><span class="chip">露天風呂めぐり</span><span class="chip">プレミアムラウンジ</span><span class="chip">夕食バイキング</span></div>
+    </div>
+  </section>
+  <section class="sheet" id="d2">
+    <span class="tape tr"></span><span class="tape br"></span>
+    <div class="dayhead"><span class="num">2</span><span class="lbl">日目・11/14（土）⛅</span></div>
+    <p class="dayroute">宿 → 谷川岳 → 草津 → 宿</p>
+    <ol class="tl">
+      <li class="am">
+        <span class="dot">♨️</span>
+        <span class="time">〜9:00</span>
+        <h3 class="ttl"><span class="ico">🌅</span>朝食バイキング → 出発</h3>
+        <p class="note">宿から谷川岳はすぐ近く</p>
+        <p class="drive">▸ 谷川岳ヨッホまで 約20分</p>
+      </li>
+      <li class="am">
+        <span class="dot">🚡</span>
+        <span class="time">9:20</span>
+        <h3 class="ttl"><span class="ico">⛰</span>谷川岳ヨッホ（ロープウェイ）</h3>
+        <p class="note">天神平へ空中散歩。<b>営業は11/15までの予定</b>。山の上は寒いので上着を。駐車場は有料</p>
+        <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E8%B0%B7%E5%B7%9D%E5%B2%B3%E3%83%A8%E3%83%83%E3%83%9B">📍 地図をひらく</a>
+        <p class="drive">▸ 11:15下山 → 草津まで 約1時間40分</p>
+      </li>
+      <li class="pm">
+        <span class="dot">♨️</span>
+        <span class="time">13:00</span>
+        <h3 class="ttl"><span class="ico">🍢</span>草津温泉 湯畑</h3>
+        <p class="note">食べ歩きでお昼ごはん → 西の河原公園 → 日帰り湯（大滝乃湯など）。<b>湯釜は冬の閉鎖中で行けない</b></p>
+        <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E8%8D%89%E6%B4%A5%E6%B8%A9%E6%B3%89%20%E6%B9%AF%E7%95%91">📍 地図をひらく</a>
+      </li>
+      <li class="eve">
+        <span class="dot">🚗</span>
+        <span class="time">16:00</span>
+        <h3 class="ttl"><span class="ico">⚠️</span>草津 出発</h3>
+        <p class="note"><b>16:00には出る</b>。押したら日帰り湯を切る（宿にも温泉あり）</p>
+        <p class="drive">▸ 宿まで 約1時間40分</p>
+      </li>
+      <li class="stay">
+        <span class="dot">🛏</span>
+        <span class="time">17:40</span>
+        <h3 class="ttl"><span class="ico">🏨</span>宿にもどる</h3>
+        <p class="note">夕食バイキング → 夜の温泉</p>
+        <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E5%A4%A7%E6%B1%9F%E6%88%B8%E6%B8%A9%E6%B3%89%E7%89%A9%E8%AA%9EPremium%20%E6%9D%BE%E4%B9%83%E4%BA%95%20%E3%81%BF%E3%81%AA%E3%81%8B%E3%81%BF%E7%94%BA">📍 地図をひらく</a>
+      </li>
+    </ol>
+  </section>
+  <section class="sheet" id="d3">
+    <span class="tape tl"></span><span class="tape br"></span>
+    <div class="dayhead"><span class="num">3</span><span class="lbl">日目・11/15（日）☔</span></div>
+    <p class="dayroute">宿 → 水沢 → JAMCOVER → 富岡 → 甘楽 → 南行徳</p>
+    <ol class="tl">
+      <li class="am">
+        <span class="dot">☔</span>
+        <span class="time">〜9:45</span>
+        <h3 class="ttl"><span class="ico">🌅</span>朝食 → チェックアウト</h3>
+        <p class="note">雨の予報（降水確率70%）。屋根のある場所を中心に回る日</p>
+        <p class="drive">▸ 水沢まで 約1時間15分（水上IC→渋川伊香保IC）</p>
+      </li>
+      <li class="am">
+        <span class="dot">🍜</span>
+        <span class="time">11:00</span>
+        <h3 class="ttl"><span class="ico">🥢</span>水沢うどん（水香苑）</h3>
+        <p class="note">早めのお昼ごはん</p>
+        <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E6%B0%B4%E6%B2%A2%E3%81%86%E3%81%A9%E3%82%93%20%E6%B0%B4%E9%A6%99%E8%8B%91%20%E6%9C%AC%E5%BA%97">📍 地図をひらく</a>
+        <p class="drive">▸ JAMCOVERまで 約30分</p>
+      </li>
+      <li class="pm">
+        <span class="dot">🧸</span>
+        <span class="time">12:00</span>
+        <h3 class="ttl"><span class="ico">🛍</span>JAMCOVER VILLAGE</h3>
+        <p class="note">雑貨・服をゆっくり。中の食堂は<b>現金のみ</b></p>
+        <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=JAMCOVER%20VILLAGE%20%E9%AB%98%E5%B4%8E%E5%B8%82%E4%B8%8B%E5%AE%A4%E7%94%B0%E7%94%BA1686">📍 地図をひらく</a>
+        <p class="drive">▸ 13:15発 → 富岡製糸場まで 約45分</p>
+      </li>
+      <li class="pm">
+        <span class="dot">🏭</span>
+        <span class="time">13:45</span>
+        <h3 class="ttl"><span class="ico">🧵</span>富岡製糸場</h3>
+        <p class="note">世界遺産。建物の中で見学できるので雨でも大丈夫。<b>最終入場16:30</b></p>
+        <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E5%AF%8C%E5%B2%A1%E8%A3%BD%E7%B3%B8%E5%A0%B4">📍 地図をひらく</a>
+        <p class="drive">▸ こんにゃくパークまで 約15分</p>
+      </li>
+      <li class="pm">
+        <span class="dot">🍮</span>
+        <span class="time">15:15</span>
+        <h3 class="ttl"><span class="ico">🎡</span>こんにゃくパーク</h3>
+        <p class="note">工場見学と無料の試食バイキング。<b>疲れていたらここは切る</b></p>
+        <a class="mapbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=%E3%81%93%E3%82%93%E3%81%AB%E3%82%83%E3%81%8F%E3%83%91%E3%83%BC%E3%82%AF%20%E7%94%98%E6%A5%BD%E7%94%BA">📍 地図をひらく</a>
+        <p class="drive">▸ 16:00発 → 富岡IC → 上信越道 → 関越道 → 外環</p>
+      </li>
+      <li class="eve">
+        <span class="dot">🏁</span>
+        <span class="time">18:30〜19:00</span>
+        <h3 class="ttl"><span class="ico">🏠</span>南行徳 着</h3>
+        <p class="note">目標の19〜20時まで<b>約1時間の余裕</b>。日曜夕方の関越の上りは混むので16:00には出る。おつかれさま！</p>
+      </li>
+    </ol>
+  </section>
+  <section class="sheet memo">
+    <span class="tape tl"></span>
+    <h3>🎒 持ち物 &amp; メモ</h3>
+    <ul>
+      <li><b>折りたたみ傘・雨に強い靴</b> — 日曜は雨の予報</li>
+      <li><b>上着</b> — 谷川岳の上と朝晩は冷える（最低気温2〜3℃）</li>
+      <li><b>現金</b> — JAMCOVERの食堂はカード・電子マネーが使えない</li>
+      <li><b>フェイスタオル</b> — 草津の日帰り湯用</li>
+      <li><b>行けない場所</b> — 湯釜（冬の閉鎖中）・一ノ倉沢（通行止め）</li>
+      <li><b>宿の名前</b> — カレンダーに名前が無かったので「水上のPremium」から判断。予約メールで確認しておく</li>
+    </ul>
+  </section>
+  <section class="sheet memo">
+    <span class="tape tr"></span>
+    <h3>🍽 周辺のお店メモ</h3>
+    <ul>
+      <li>（気になるお店を見つけたら、近くの場所ごとにここに追加）</li>
+    </ul>
+  </section>
+  <section class="sheet memo">
+    <span class="tape br"></span>
+    <h3>💬 LINEにそのまま貼る</h3>
+    <pre id="linetext">🗾 群馬 2泊3日（11/13〜15）
+🏨 大江戸温泉物語Premium 松乃井（水上）
+
+【1日目 11/13 金 晴れ】
+🚗 9:30 南行徳 出発（外環→関越）
+🛍 11:30 道の駅まえばし赤城
+🍡 12:30 伊香保 石段街（食べ歩きで昼）
+🚗 14:30 伊香保 出発
+🏨 15:30 宿 → 温泉 → 夕食バイキング
+
+【2日目 11/14 土 曇り時々晴れ】
+🍳 朝食 → 9:00 出発
+🚡 9:20 谷川岳ヨッホ（ロープウェイ）
+♨️ 13:00 草津 湯畑（食べ歩き・西の河原・日帰り湯）
+⚠️ 16:00 草津 出発（押したら日帰り湯を切る）
+🏨 17:40 宿 → 夕食バイキング
+
+【3日目 11/15 日 雨】
+🍳 朝食 → 9:45 出発
+🍜 11:00 水沢うどん（水香苑）
+🧸 12:00 JAMCOVER VILLAGE
+🏭 13:45 富岡製糸場 ⚠️最終入場16:30
+🍮 15:15 こんにゃくパーク（疲れたら切る）
+🚗 16:00 帰路
+🏠 18:30〜19:00 南行徳 着</pre>
+    <button id="copy" type="button">📋 テキストをコピー</button>
+  </section>
+  <footer>いってらっしゃい <span class="heart">♥</span></footer>
+</div>
+<script>
+document.getElementById('copy').addEventListener('click', async function(){
+  var txt = document.getElementById('linetext').textContent;
+  var btn = this;
+  try{
+    await navigator.clipboard.writeText(txt);
+    btn.textContent = '✅ コピーしました！';
+  }catch(e){
+    var r = document.createRange();
+    r.selectNodeContents(document.getElementById('linetext'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    btn.textContent = '選択したので長押しでコピーしてね';
+  }
+  setTimeout(function(){ btn.textContent = '📋 テキストをコピー'; }, 2600);
+});
+</script>
+</body>
+</html>
